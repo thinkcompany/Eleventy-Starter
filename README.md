@@ -49,7 +49,7 @@ Generate a production-ready build to the `dist` folder:
 npm run build
 ```
 
-Or build and spin up a local dev server:
+Or build and spin up a local dev server at http://localhost:8080/
 
 ```bash
 npm run dev
