@@ -32,7 +32,7 @@ cd my-cool-site
 2. Clone this repository
 
 ```bash
-git clone [REPO URL GOES HERE].
+git clone https://github.com/thinkcompany/Eleventy-Starter.git .
 ```
 
 3. Install dependencies
