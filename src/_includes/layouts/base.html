@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="{{ metadata.language }}">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title or metadata.title }}</title>
+    <meta name="description" content="{{ metaDescription or metadata.title }}">
+    <link rel="stylesheet" href="/assets/css/style.css">
+  </head>
+
+  <body class="site">
+    {# <a href="#skip" class="visually-hidden">Skip to main content</a> #}
+    <header class="site-header">
+      <h1>{{ metadata.title }}</h1>
+      {% include "components/navigation.html" %}
+    </header>
+
+    <main class="site-main">
+      {{ content | safe }}
+    </main>
+  </body>
+
+  <footer class="site-footer">
+    <p>&copy; {{ metadata.title }} {% year %}</p>
+  </footer>
+  <script src="/assets/js/index.js" async></script>
+</html>
