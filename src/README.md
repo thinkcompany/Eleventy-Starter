@@ -9,13 +9,16 @@
 
 # Think Company Eleventy Starter
 
-A minimal Eleventy starter repo:
-- Sass to CSS processing
-- CSS transpiled by Lightning CSS
-- Javascript bundled and minified by esbuild
-- Simple blog functionality
+Think Company Eleventy Starter
+Welcome to the Think Company Eleventy Starter, a minimalistic and efficient starter template designed to help you quickly build static sites using Eleventy. This starter kit includes additional features to streamline your Eleventy journey:
 
-This project uses a canary version of Eleventy for [ESM support](https://equk.co.uk/2023/12/29/11ty-ecmascript-modules-support/). For anything client related consider using the latest stable build (2.0.x).
+- Sass to CSS Processing: Write modular, maintainable CSS with Sass.
+- CSS Transpilation with Lightning CSS: Enjoy modern CSS features and optimizations.
+- JavaScript Bundling and Minification: Efficiently bundle and minify your JavaScript with esbuild.
+- Simple Blog Functionality: Quickly set up a blog with minimal configuration.
+- Built-in Navigation: Utilize the built-in navigation support to easily manage site menus and links.
+
+This project leverages a canary version of Eleventy for ESM support. For client-related work, it's recommended to use the latest stable build (2.0.x).
 
 ## Table of Contents
 
@@ -192,7 +195,7 @@ eleventyConfig.addShortcode("year", () => `${new Date().getFullYear()}`);
 Eleventy comes with data values that can be useful for debugging, or for use in a template. Use the `log` utility to view data in the console Data objects are `pkg`, `page`, `pagination`, `collections`, and `eleventy`. Usage "pkg | log"
 
 **Demo build step**
-The *source of truth* README lives in the root, as expected. `npm run copy-readme` copies that readme file into the `src/` directory as a markdown file, and adds front matter data so the page will render in the navigation.
+The *source of truth* README lives in the root, as expected. `npm run copy-readme` copies that readme file into the `src/` directory as a markdown file, and adds front matter data so the page will render in the navigation. This exists only as a way to demo the readme as an 11ty page without manual duplication.
 
 This build step is combined with `npm run build` in `package.json`.
 

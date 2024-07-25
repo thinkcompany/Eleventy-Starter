@@ -1,6 +1,5 @@
 _site/
 dist/
-src/README.md
 **/node_modules/**
 package-lock.json
 .DS_Store
