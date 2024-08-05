@@ -1,23 +1,14 @@
 ---
 layout: layouts/base.html
-pageTitle: Hello World!
-eleventyNavigation:
-  key: home
-  title: Home
-  order: 0
+title: Impact Outlook
+description: A toolkit for building designed experiences that center humanity.
+footerTitle: Aligning on values shouldn&rsquo;t be complicated.
 ---
 
-<section class="page-content">
-  <h2>{{ pageTitle }}</h2>
-  <p>Welcome to the Think Company Eleventy Starter Site.</p>
-</section>
+<div class="io-hero">
+  {% include "./assets/svg/hero-rings.svg" %}
+</div>
 
-<aside>
-  <h3>Latest blog posts</h3>
-  {% for post in collections.posts %}
-    <article class="post-excerpt">
-      <h3><a href="{{ post.url }}">{{ post.data.title }}</a></h3>
-      {{ post.data.date | postDate }}
-    </article>
-  {% endfor %}
-</aside>
+<section class="io-cards">
+  {% include "components/cards.html" %}
+</section>

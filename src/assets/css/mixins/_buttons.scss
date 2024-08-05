@@ -1,0 +1,32 @@
+@mixin button-primary {
+  position: relative;
+  padding: $spacing-stack-8 $spacing-inline-16;
+  font-size: $font-size-14;
+  font-weight: $font-weight-700;
+  color: $color-white;
+  border-radius: $border-radius-big;
+  border: 1px solid $color-light-purple;
+  background: $color-light-purple;
+  line-height: 1;
+  text-align: center;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+
+  &:hover,
+  &:focus {
+    border-color: darken($color-light-purple, 5%);
+    background: darken($color-light-purple, 5%);
+  }
+
+  &:active {
+    border-color: darken($color-light-purple, 10%);
+    background: darken($color-light-purple, 10%);
+  }
+
+  &[disabled],
+  &:disabled {
+    opacity: 0.4;
+    cursor: default;
+  }
+}

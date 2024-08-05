@@ -1,13 +1,12 @@
 {
-  "name": "eleventy-starter",
+  "name": "Impact Outlook",
   "version": "1.0.0",
-  "description": "",
+  "description": "A toolkit for building designed experiences that center humanity.",
   "main": "assets/js/index.js",
   "type": "module",
   "scripts": {
-    "copy-readme": "node build/copy-readme.mjs",
     "dev": "eleventy --serve",
-    "build": "npm run copy-readme && eleventy",
+    "build": "npx @11ty/eleventy",
     "debug": "DEBUG=Eleventy* npx @11ty/eleventy"
   },
   "keywords": [],

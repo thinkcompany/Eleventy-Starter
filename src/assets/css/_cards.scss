@@ -1,0 +1,151 @@
+$card-size: 338px;
+$button-height: 32px;
+$icon-figma: 128px;
+$icon-io: 176px;
+$icon-io-offset: 6%;
+$icon-figma-offset: -20%;
+$icon-hourglass: 230px;
+$card-break: 300px;
+$card-break-b: 260px;
+
+.io-cards {
+  display: grid;
+  grid-template-columns: auto;
+  grid-template-rows: auto;
+  justify-items: center;
+  gap: $spacing-inline-32;
+  margin-top: -$spacing-stack-20;
+  margin-bottom: -$spacing-stack-50;
+
+  @include wider-than($breakpoint-phone-landscape) {
+    grid-template-columns: repeat(2, auto);
+    grid-template-rows: repeat(2, auto);
+    margin-top: -$spacing-stack-24;
+    margin-bottom: -$spacing-stack-32;
+  }
+
+  @include wider-than($breakpoint-tablet) {
+    grid-template-columns: repeat(3, auto);
+    grid-template-rows: auto;
+  }
+}
+
+.io-card {
+  position: relative;
+  container-type: size;
+  container-name: card;
+  width: min(100%, $card-size);
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+  border: 0.5px solid $color-blue-border;
+  border-radius: $border-radius;
+  backdrop-filter: blur(10px);
+  background-image: $gradient-blue-bg;
+  background-repeat: no-repeat;
+  background-position: center;
+  box-shadow: $box-shadow-card;
+
+  &:first-of-type {
+    grid-row: 2;
+
+    @include wider-than($breakpoint-tablet) {
+      grid-row: 1;
+    }
+  }
+
+  &:nth-of-type(2) {
+    grid-row: 1;
+    background-image: url('/assets/svg/circle-rings.svg'), $gradient-blue-bg;
+    background-repeat: no-repeat, no-repeat;
+    background-position: center, center;
+
+    @include wider-than($breakpoint-phone-landscape) {
+      grid-column: 1 / 3;
+    }
+
+    @include wider-than($breakpoint-tablet) {
+      grid-column: 2;
+    }
+  }
+
+  &:nth-of-type(3) {
+    @include wider-than($breakpoint-phone-landscape) {
+      grid-row: 2;
+    }
+
+    @include wider-than($breakpoint-tablet) {
+      grid-row: 1;
+    }
+  }
+}
+
+.io-card-container {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  grid-template-columns: 1fr;
+  align-items: center;
+  justify-items: center;
+  width: 100%;
+  height: 100%;
+  padding: $spacing-stack-32 $spacing-inline-16;
+  text-align: center;
+
+  @container card (max-width: #{$card-break} ) {
+    padding: $spacing-stack-16;
+  }
+
+  .io-btn {
+    align-self: end;
+
+    @container card (max-width: #{$card-break} ) {
+      font-size: $font-size-10;
+    }
+  }
+}
+
+.io-card-title {
+  @include type-display-s;
+}
+
+.io-card-content {
+  display: flex;
+
+  &--filled {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  &--offset {
+    // @include wider-than($breakpoint-mobile-start) {
+    //   transform: translateY(calc(#{$button-height} / 2)); // centers  content vertically
+    // }
+    @container card (min-width: #{$card-break-b} ) {
+      transform: translateY(calc(#{$button-height} / 2));
+    }
+  }
+
+  &--offset-b {
+    @include wider-than($breakpoint-mobile-start) {
+      transform: translateY(-4px);
+    }
+  }
+}
+
+.io-icon--io {
+  width: min(60%, #{$icon-io});
+  transform: translateX(#{$icon-io-offset});
+  z-index: 1;
+}
+
+.io-icon--figma {
+  width: min(42%, #{$icon-figma});
+  transform: translateX(#{$icon-figma-offset});
+}
+
+.io-icon--hourglass {
+  width: min(71%, #{$icon-hourglass});
+  margin: auto;
+}

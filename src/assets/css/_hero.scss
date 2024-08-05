@@ -1,0 +1,106 @@
+$durationA: 0.75s;
+$durationB: calc($durationA * 0.4);
+$durationC: calc($durationA * 0.3);
+$durationD: calc($durationA * 0.7);
+$stage-delay: $durationA * 1.35;
+$timing-fn: cubic-bezier(0.18,0.89,0.25,1.12);
+
+.io-hero {
+  position: relative;
+  margin: 0 auto;
+  z-index: 1;
+  overflow: visible;
+
+  @media (min-width: $breakpoint-mobile-start) {
+    width: clamp(19.5rem, 13.975920679886684rem + 22.6628895184136vw, 29.5rem);
+  }
+
+  svg {
+    display: block;
+    overflow: visible;
+    perspective: 800px;
+  }
+
+  [class*="ring-"] {
+    transform-origin: center;
+    animation: tiltExpand $durationA $timing-fn forwards paused;
+  }
+
+  .ring-outer {
+    transform: translateY(0) rotate3d(1, 0, 0, 0);
+    animation:
+      tiltExpand $durationA $timing-fn forwards paused,
+      outerRingUp $durationA $timing-fn $stage-delay forwards paused;
+  }
+
+  .ring-middle {
+    transform: translateY(0) rotate3d(1, 0, 0, 0);
+    animation:
+      tiltExpand $durationA $timing-fn forwards paused,
+      middleRingDown $durationA $timing-fn $stage-delay forwards paused;
+  }
+
+  .ring-inner {
+    animation:
+      tiltExpand $durationA $timing-fn forwards paused,
+      innerRingDown $durationA $timing-fn $stage-delay forwards paused;
+  }
+
+  .center-group {
+    animation: fadeOut $durationD linear forwards paused;
+  }
+
+  [class*="clone-"] {
+    opacity: 0;
+    animation-name: none;
+    animation-duration: $durationB;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+  }
+
+  .clone-outer {
+    transform-origin: top;
+    transform: rotateX(56deg);
+  }
+
+  .clone-middle {
+    transform-origin: bottom;
+    transform: rotateX(56deg) translateY(-14%);
+  }
+
+  &.io-is-animating-a {
+    [class*="ring-"],
+    .center-group {
+      animation-play-state: running;
+    }
+  }
+
+
+  &.io-is-animating-b {
+    .clone-outer,
+    .clone-middle {
+      animation-name: var(--animation-name, none); // Fallback to 'none'
+    }
+
+    .ring-inner {
+      animation: innerRingReverse $durationC linear forwards;
+    }
+
+    .center-group {
+      animation: fadeIn $durationD linear forwards;
+    }
+  }
+
+  &.io-ring-change {
+    .clone-middle,
+    .clone-outer {
+      opacity: 1;
+    }
+
+    .ring-outer,
+    .ring-middle {
+      opacity: 0;
+      animation: initial;
+    }
+  }
+}
