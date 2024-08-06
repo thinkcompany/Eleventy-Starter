@@ -1,6 +1,7 @@
 {
-  "title": "Impact Outlook",
-	"url": "url",
-	"language": "en",
-	"description": "A toolkit for building designed experiences that center humanity."
+  "title": "Eleventy Starter",
+  "description": "An enticing statement for the robots.",
+  "url": "https://coolsite.com/",
+  "language": "en",
+  "author": "Your Name Here"
 }
