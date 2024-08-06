@@ -1,18 +1,7 @@
 @mixin type-display-xl() {
   font-size: 18vw;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  font-weight: $font-weight-700;
-  font-size-adjust: 0.39;
-  line-height: 1.01;
-
-  .io-wf-active & {
-    font-family: $font-family-display;
-    font-size-adjust: initial;
-    line-height: 1;
-    font-optical-sizing: auto;
-    font-variant-numeric: lining-nums proportional-nums;
-    font-variation-settings: 'wght' $font-weight-700, 'slnt' 0;
-  }
+  font-family: $font-family-display;
+  line-height: 1;
 
   @include wider-than($breakpoint-mobile-start) {
     font-size: $font-size-display-xl;
@@ -22,11 +11,8 @@
 @mixin type-display-m() {
   font-size: 1.75rem;
   font-family: $font-family-display;
-  font-weight: $font-weight-700;
+  font-weight: 700;
   line-height: 1;
-  font-optical-sizing: auto;
-  font-variant-numeric: lining-nums proportional-nums;
-  font-variation-settings: 'wght' $font-weight-700, 'slnt' 0;
 
   @include wider-than($breakpoint-mobile-start) {
     font-size: $font-size-display-m;
@@ -39,16 +25,10 @@
   font-family: $font-family-display;
   font-weight: $font-weight-400;
   line-height: calc(36 / 32);
-  font-optical-sizing: auto;
-  font-variant-numeric: lining-nums proportional-nums;
-  font-variation-settings: 'wght' $font-weight-400, 'slnt' 0;
 }
 
 @mixin type-body-xl() {
   font-size: 1rem;
   font-size: $font-size-body-l;
   font-weight: $font-weight-500;
-  font-optical-sizing: auto;
-  font-variant-numeric: lining-nums proportional-nums;
-  font-variation-settings: 'wght' $font-weight-500, 'slnt' 0;
 }
