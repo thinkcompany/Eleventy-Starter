@@ -17,10 +17,11 @@
     <title>{{ title or metadata.title }}</title>
     <link rel="stylesheet" href="/assets/css/style.css">
     <script src="/assets/js/fontfaceobserver.standalone.js"></script>
+
     <script>
       document.documentElement.className += " io-wf-inactive";
 
-      var newsreader = new FontFaceObserver("Newsreader", {});
+      const newsreader = new FontFaceObserver("Newsreader", {});
 
       newsreader.load().then(function () {
         document.documentElement.classList.remove("io-wf-inactive");
@@ -33,16 +34,12 @@
     <a href="#main-content" class="io-accessibly-hidden io-skip-link">Skip to main content</a>
     <div class="io-container-wrapper">
       <div class="io-container io-container--default">
-        {%- include "../header.html" -%}
-
-        <main id="main-content">
-          {{ content | safe }}
-        </main>
+        <header class="io-header">
+          <span class="io-test io-test--a">Bb</span><span class="io-test io-test--b">Bb</span>
+          <h1 class="io-title io-test--base">{{ title or metadata.title }}</h1>
+          {# <h1 class="io-test io-test--b">{{ title or metadata.title }}</h1> #}
+        </header>
       </div>
     </div>
   </body>
-
-  {% include "../footer.html" %}
-  <script src="/assets/js/index.js" async></script>
-
 </html>
