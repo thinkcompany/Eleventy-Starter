@@ -2,9 +2,8 @@
   font-size: 18vw;
   font-family: Georgia, 'Times New Roman', Times, serif;
   font-weight: $font-weight-700;
-  font-size-adjust: 0.47;
-  line-height: 1.2;
-  transform: translateY(-0.2em);
+  font-size-adjust: 0.39;
+  line-height: 1.01;
 
   .io-wf-active & {
     font-family: $font-family-display;
@@ -13,7 +12,6 @@
     font-optical-sizing: auto;
     font-variant-numeric: lining-nums proportional-nums;
     font-variation-settings: 'wght' $font-weight-700, 'slnt' 0;
-    transform: translateY(0);
   }
 
   @include wider-than($breakpoint-mobile-start) {
